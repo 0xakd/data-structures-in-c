@@ -5,10 +5,10 @@
 #include "../doubly-linked-list/dll.h"
 
 
-//Function for initialising a new stk
+//Function for initialising a new stack
 Stack *new_stack(int size){
     // allocate memory ffor stack object 
-    Stack* stk = (Stack *)(sizeof(Stack));
+    Stack* stk = (Stack *)malloc(sizeof(Stack));
 
     // set the size of the stack equal to 
     // the size given by the user 
@@ -16,7 +16,7 @@ Stack *new_stack(int size){
 
     // we will use a DLL as the interal data structure
     // for the stack so stacck contents will be a DLL 
-    stk->contents = new_list();
+    stk->contents = dll_new_list();
 
     // return the newly created stack
     return stk;   
