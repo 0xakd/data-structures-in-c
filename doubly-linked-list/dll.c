@@ -3,7 +3,7 @@
 #include "dll.h"
 
 //Function to create a new node
-DNode *new_node(int data){
+DNode *dll_new_node(int data){
     DNode *temp = (DNode *)malloc(sizeof(DNode));
     temp->prev = NULL;
     temp->data=data;
@@ -14,7 +14,7 @@ DNode *new_node(int data){
 
 
 //Function for initialising a new list
-Dlist *new_list(){
+Dlist *dll_new_list(){
     Dlist *n_list = (Dlist *)malloc(sizeof(Dlist));
     n_list->len=0;
     if(!n_list) return n_list;
@@ -23,7 +23,7 @@ Dlist *new_list(){
 
 
 //Function to add new node at the beginning.
-Dlist *add(Dlist *list, int data){
+Dlist *dll_add(Dlist *list, int data){
     if(!list) return NULL;
     DNode *n_node = new_node(data);
     
@@ -42,7 +42,7 @@ Dlist *add(Dlist *list, int data){
 
 
 //Function to push new node at the end of the list.
-Dlist *push(Dlist *list, int data){
+Dlist *dll_push(Dlist *list, int data){
     if(!list) return NULL;
     DNode *n_node = new_node(data);
     if(list->head==NULL){
@@ -62,7 +62,7 @@ Dlist *push(Dlist *list, int data){
 
 
 //Function for removing the node at the beginning of the list.
-int pop(Dlist *list){
+int dll_pop(Dlist *list){
     if(!list) return 0;
     if(!list->head) return 0;
     DNode *current = list->head;
@@ -77,7 +77,7 @@ int pop(Dlist *list){
 
 
 //Function to remove the last node from the list.
-int remove_node(Dlist *list){
+int dll_remove(Dlist *list){
     if(!list) return 0;
     if(!list->head) return 0;
     
@@ -95,7 +95,7 @@ int remove_node(Dlist *list){
 
 
 //Function to find weather a given data is present in the list or not.
-int find(Dlist *list, int data){
+int dll_find(Dlist *list, int data){
     if(!list) return 0;
     if(!list->head) return 0;
 
@@ -115,7 +115,7 @@ int find(Dlist *list, int data){
 
 
 //Function to print all the nodes 
-void display(Dlist *list){
+void dll_display(Dlist *list){
     if(!list) return;
     if(!list->head) return;
 
@@ -132,9 +132,16 @@ void display(Dlist *list){
 
 
 
+int dll_peek(Dlist *list){
+    if(!list) return 0;
+    if(!list->head) return 0;
+    return list->tail->data;
+}
+
+
 //Function for returning the size of the ll.
-int size(Dlist *list){
+int dll_size(Dlist *list){
     if(!list) return 0;
-    if(!list) return 0;
+    if(!list->head) return 0;
     return list->len;
 }
