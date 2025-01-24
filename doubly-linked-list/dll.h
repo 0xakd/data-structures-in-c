@@ -28,39 +28,39 @@ typedef struct dll
  * and return the pointer of the newly
  * created node to the caller 
  */
-DNode *new_node(int data);
+DNode *dll_new_node(int data);
 /**
  * function to create a new DLL list 
  * and return the pointer of the newly 
  * created list to the caller
  */
-Dlist *new_list();
+Dlist *dll_new_list();
 
 
 /**
  * add new data node to the list 
  * at the beginning 
  */
-Dlist *add(Dlist *list,  int data);
+Dlist *dll_add(Dlist *list,  int data);
 
 /**
  * add new node to the end of the list
  */
-Dlist *push(Dlist *list, int data);
+Dlist *dll_push(Dlist *list, int data);
 
 /**
  * pop function will remove the node
  * at the begging and will return the 
  * data that was stored in the node 
  */
-int pop(Dlist *list);
+int dll_pop(Dlist *list);
 
 /**
  * remove will remove the node at the end
  * and return the data that was stored in
  * the node
  */
-int remove_node(Dlist *list);
+int dll_remove(Dlist *list);
 
 /**
  * find - will return the node position 
@@ -68,16 +68,16 @@ int remove_node(Dlist *list);
  * or it will return -1 if the data 
  * does not exists in the node 
  */
-int find(Dlist *list, int data);
+int dll_find(Dlist *list, int data);
 
 /**
  * display - will print all the node values with their positions
  */
-void display(Dlist *list);
+void dll_display(Dlist *list);
 
 /**
  * size - will return the length of the list
  */
-int size(Dlist *list);
+int dll_size(Dlist *list);
 
 #endif
