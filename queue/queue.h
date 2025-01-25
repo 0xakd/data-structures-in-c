@@ -48,7 +48,7 @@ int queue_peek(Queue *que);
  * the queue is empty or not
  * [returns boolean value]
  */
-bool queue_is_empty(Queue *que);
+bool is_queue_empty(Queue *que);
 
 
 /**
@@ -56,7 +56,7 @@ bool queue_is_empty(Queue *que);
  * the queue is full or not.    
  * [returns boolean value]
  */
-bool queue_is_full(Queue *que);
+bool is_queue_full(Queue *que);
 
 
 #endif

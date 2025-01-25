@@ -24,7 +24,7 @@ Stack *new_stack(int size){
 
 //push - Function to add new node from the top of the stack.
 Stack *stack_push(Stack *stk, int data){
-    stk = dll_push(stk->contents, data);
+    stk->contents = dll_push(stk->contents, data);
     return stk;
 }
 

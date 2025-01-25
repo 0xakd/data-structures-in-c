@@ -75,6 +75,14 @@ int dll_find(Dlist *list, int data);
  */
 void dll_display(Dlist *list);
 
+
+/**
+ * this function will return
+ * the last node value from the list
+ */
+int dll_peek(Dlist *list);
+
+
 /**
  * size - will return the length of the list
  */

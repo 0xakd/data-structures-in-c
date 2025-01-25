@@ -2,6 +2,7 @@
 #define _STACK_
 
 #include "../doubly-linked-list/dll.h"
+#include <stdbool.h>
 
 
 typedef struct stk
