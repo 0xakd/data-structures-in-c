@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include "stack.h"
 #include "../doubly-linked-list/dll.h"
+#include "stack.h"
 
 
 //Function for initialising a new stack
@@ -39,11 +39,11 @@ int stack_peek(Stack *stk){
 }
 
 //isEmpty - Function to check weather the stack is empty or not.
-bool stack_is_empty (Stack *stk){
+bool is_stack_empty (Stack *stk){
     return dll_size(stk->contents) == 0;
 }
 
 //isFull - Function to check weather the stack is FULL or not.
-bool stack_is_full(Stack *stk){
+bool is_stack_full(Stack *stk){
     return dll_size(stk->contents) == stk->size;
 }

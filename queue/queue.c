@@ -26,7 +26,11 @@ Queue *new_queue(int size){
 // function to add new element/member
 // at the beginning of the queue.
 Queue *queue_enqueue(Queue *que, int data){
-    que = dll_add(que->contents, data);
+    if (is_queue_full(que)!=true){
+        que->contents = dll_add(que->contents, data);
+    }else{
+        printf("Queue is already full.\n");
+    }
     return que;
 }
 
@@ -34,21 +38,31 @@ Queue *queue_enqueue(Queue *que, int data){
 // function to remove the last element
 // from the queue and return the removed element
 int queue_dequeue(Queue *que){
-    return dll_remove(que->contents);
+    if (is_queue_empty(que)!=true){
+        return dll_remove(que->contents);
+    }else{
+        printf("Nothing to remove.\n");
+        return 0;
+    }
 }
 
 
 // function to return the top-most element of the stack
 int queue_peek(Queue *que){
-    return dll_peek(que->contents);
+    if (is_queue_empty(que)!=true){
+        return dll_peek(que->contents);
+    }else{
+        printf("Queue is empty.\n");
+        return 0;
+    }
 }
 
 // function to check weather the queue is empty or not.
-bool queue_is_empty (Queue *que){
+bool is_queue_empty (Queue *que){
     return dll_size(que->contents) == 0;
 }
 
 //isFull - Function to check weather the stack is FULL or not.
-bool queue_is_full(Queue *que){
-    return dll_size(que->contents) == que->size;
+bool is_queue_full(Queue *que){
+    return (dll_size(que->contents) == que->size);
 }

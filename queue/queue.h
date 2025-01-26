@@ -2,7 +2,7 @@
 #define _QUEUE_
 
 #include "../doubly-linked-list/dll.h"
-
+#include <stdbool.h>
 
 
 typedef struct que
@@ -33,7 +33,7 @@ Queue *queue_enqueue(Queue *que, int data);
  * function to remove an element 
  * from the back of the queue
  */
-Queue *queue_dequeue(Queue *que);
+int queue_dequeue(Queue *que);
 
 
 /**

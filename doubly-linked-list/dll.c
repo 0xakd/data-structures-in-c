@@ -12,7 +12,6 @@ DNode *dll_new_node(int data){
 }
 
 
-
 //Function for initialising a new list
 Dlist *dll_new_list(){
     Dlist *n_list = (Dlist *)malloc(sizeof(Dlist));
@@ -25,7 +24,7 @@ Dlist *dll_new_list(){
 //Function to add new node at the beginning.
 Dlist *dll_add(Dlist *list, int data){
     if(!list) return NULL;
-    DNode *n_node = new_node(data);
+    DNode *n_node = dll_new_node(data);
     
     if (!list->head){
         list->head = n_node;
@@ -44,7 +43,7 @@ Dlist *dll_add(Dlist *list, int data){
 //Function to push new node at the end of the list.
 Dlist *dll_push(Dlist *list, int data){
     if(!list) return NULL;
-    DNode *n_node = new_node(data);
+    DNode *n_node = dll_new_node(data);
     if(list->head==NULL){
         list->head = n_node;
         list->tail = n_node;
@@ -131,17 +130,15 @@ void dll_display(Dlist *list){
 }
 
 
-
+//Function for returning the last node value from the list.
 int dll_peek(Dlist *list){
     if(!list) return 0;
-    if(!list->head) return 0;
+    if(list->head == NULL) return 0;
     return list->tail->data;
 }
 
 
 //Function for returning the size of the ll.
 int dll_size(Dlist *list){
-    if(!list) return 0;
-    if(!list->head) return 0;
     return list->len;
 }
