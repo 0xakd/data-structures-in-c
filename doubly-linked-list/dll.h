@@ -88,4 +88,11 @@ int dll_peek(Dlist *list);
  */
 int dll_size(Dlist *list);
 
+
+/**
+ * this function taked input and return
+ * the value.
+ */
+int int_input();
+
 #endif

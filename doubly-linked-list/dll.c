@@ -142,3 +142,12 @@ int dll_peek(Dlist *list){
 int dll_size(Dlist *list){
     return list->len;
 }
+
+
+//function which takes input and returns the value given by the user.
+int int_input(){
+    int num;
+    printf("Enter a value:");
+    scanf("%d", &num);
+    return num;
+}
