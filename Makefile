@@ -18,6 +18,10 @@ compile-queue:
 	$(CC) $(CFLAGS) main.c queue/queue.c doubly-linked-list/dll.c -o bin/final
 
 
+compile-hash_table:
+	$(CC) $(CFLAGS) main.c hash_table/hash_table.c hash_table/dll.c -o bin/final
+
+
 clean:
 	@echo "Removing everything except the source files"
 	rm -rf bin && mkdir bin

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
-#include "../doubly-linked-list/dll.h"
+#include "dll.h"
 #include "hash_table.h"
 
 

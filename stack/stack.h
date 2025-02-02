@@ -14,6 +14,14 @@ typedef struct stk
 } Stack;
 
 
+Stack *create_new_hlist(){
+    return dll_new_list();
+}
+
+
+
+
+
 /**
  * function to create a new Stack 
  * and return the pointer of the newly 

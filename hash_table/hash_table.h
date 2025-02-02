@@ -1,7 +1,7 @@
 #ifndef _HASH_TABLE_
 #define _HASH_TABLE_
 
-#include "../doubly-linked-list/dll.h" 
+#include "dll.h" 
 #include <stdbool.h>
 
 
