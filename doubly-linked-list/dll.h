@@ -1,6 +1,8 @@
 #ifndef _dll_
 #define _dll_
 
+
+//structure of doubly node
 typedef struct dll_node
 {
     struct dll_node *prev;
@@ -9,6 +11,9 @@ typedef struct dll_node
 
 } DNode;
 
+
+
+//structure of our list 
 typedef struct dll
 {   
     // pointer to the last node of the list
@@ -22,6 +27,13 @@ typedef struct dll
     // default value is 0
     int len;
 } Dlist;
+
+
+
+
+
+/*------------------Fuction Declarations-------------------*/
+
 
 /**
  * function to create a new node 
