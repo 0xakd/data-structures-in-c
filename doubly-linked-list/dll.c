@@ -23,7 +23,10 @@ Dlist *dll_new_list(){
 
 //Function to add new node at the beginning.
 Dlist *dll_add(Dlist *list, int data){
-    if(!list) return NULL;
+    if(!list){ 
+        printf("List doesn't exist !");
+        return NULL;
+    }
     DNode *n_node = dll_new_node(data);
     
     if (!list->head){
@@ -42,7 +45,10 @@ Dlist *dll_add(Dlist *list, int data){
 
 //Function to push new node at the end of the list.
 Dlist *dll_push(Dlist *list, int data){
-    if(!list) return NULL;
+    if(!list){ 
+        printf("List doesn't exist !");
+        return NULL;
+    }
     DNode *n_node = dll_new_node(data);
     if(list->head==NULL){
         list->head = n_node;
@@ -62,8 +68,14 @@ Dlist *dll_push(Dlist *list, int data){
 
 //Function for removing the node at the beginning of the list.
 int dll_pop(Dlist *list){
-    if(!list) return 0;
-    if(!list->head) return 0;
+    if(!list){ 
+        printf("List doesn't exist !");
+        return 0;
+    }
+    if(!list->head){ 
+        printf("List head doesn't exist !");
+        return 0;
+    }
     DNode *current = list->head;
     list->head = list->head->next;
     list->head->prev = NULL;
@@ -77,8 +89,14 @@ int dll_pop(Dlist *list){
 
 //Function to remove the last node from the list.
 int dll_remove(Dlist *list){
-    if(!list) return 0;
-    if(!list->head) return 0;
+    if(!list) { 
+        printf("List doesn't exist !");
+        return 0;
+    };
+    if(!list->head) { 
+        printf("List head doesn't exist !");
+        return 0;
+    }
     
     DNode *current = list->head, *temp;
 
@@ -95,28 +113,42 @@ int dll_remove(Dlist *list){
 
 //Function to find weather a given data is present in the list or not.
 int dll_find(Dlist *list, int data){
-    if(!list) return 0;
-    if(!list->head) return 0;
+    if(!list) { 
+        printf("List doesn't exist !");
+        return 0;
+    }
+    if(!list->head) { 
+        printf("List head doesn't exist !");
+        return 0;
+    }
 
     DNode *current = list->head;
 
     int index = 0, count = 0;
     
-    while(!current){
-        if (current->data == data) count++; 
-        current = current->next;
+    while(current!=NULL){
         index++;
+        if (current->data == data) {
+            count++;
+            return index;
+        } 
+        current = current->next;
     }
-    if (count>0) return index;
-    else return -1;
+    return -1;
 }
 
 
 
 //Function to print all the nodes 
 void dll_display(Dlist *list){
-    if(!list) return;
-    if(!list->head) return;
+    if(!list) { 
+        printf("List doesn't exist !");
+        return ;
+    };
+    if(!list->head) { 
+        printf("List doesn't exist !");
+        return ;
+    }
 
     DNode *current = list->head;
 
@@ -132,8 +164,14 @@ void dll_display(Dlist *list){
 
 //Function for returning the last node value from the list.
 int dll_peek(Dlist *list){
-    if(!list) return 0;
-    if(list->head == NULL) return 0;
+    if(!list) { 
+        printf("List doesn't exist !");
+        return 0;
+    };
+    if(list->head == NULL) { 
+        printf("List doesn't exist !");
+        return 0;
+    }
     return list->tail->data;
 }
 
